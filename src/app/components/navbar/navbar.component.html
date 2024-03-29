@@ -1,0 +1,49 @@
+<nav class="navbar bg-black navbar-expand-lg lead" id="navbar" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/']">
+      <img ngSrc="assets/images/domus_transparente.png" width="69" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/']">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/galeria']">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/talleres']">Talleres</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/alquiler']">Alquiler</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nueva-seccion" [routerLink]="['/eventos']">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/contacto']">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/normas']">Normas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/socios']">Socios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/bricosado']">Bricosado</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Otros
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" [routerLink]="['/politica-de-cookies']">Política de cookies</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
