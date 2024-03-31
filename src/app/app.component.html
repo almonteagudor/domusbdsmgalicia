@@ -1,25 +1,56 @@
-<app-navbar></app-navbar>
-<header>
-  <img ngSrc="assets/images/domus_transparente.png" width="389" height="167" alt="Logo Domus">
-</header>
-<div class="container text-justify font-italic my-5">
-  <router-outlet></router-outlet>
-</div>
-<nav class="navbar fixed-bottom navbardark" id="divFooter">
-  <div class="w-100 d-flex flex-row flex-wrap justify-content-between">
-    <div>
-      Asociación DomuS BDSM Galicia
+<mat-sidenav-container fullscreen>
+  <mat-sidenav #sidenav mode="push" [ngStyle]="{ width: '250px' }">
+    <mat-toolbar color="primary">
+      <span>Menú</span>
+
+      <span class="spacer"></span>
+
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <mat-nav-list>
+      <mat-list-item *ngFor="let item of sidebarItems" [routerLink]="item.url" (click)="sidenav.toggle()">
+        <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+        {{ item.label }}
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+
+      <span class="spacer"></span>
+
+      <img ngSrc="assets/images/domus_transparente.png" width="69" height="30" class="d-inline-block align-top" alt="" loading="lazy">
+    </mat-toolbar>
+    <header>
+      <img ngSrc="assets/images/domus_transparente.png" width="389" height="167" alt="Logo Domus">
+    </header>
+    <div class="container text-justify font-italic my-5">
+      <router-outlet></router-outlet>
     </div>
-    <div class="d-flex flex-row align-items-center">
-      <a href="https://fetlife.com/users/7135971" target="_blank">
-        <img class="mx-2" ngSrc="assets/images/fetlife.svg" width="25" height="25" alt="Logo FetLife">
-      </a>
-      <a href="https://www.facebook.com/DomuS.Galicia" target="_blank">
-        <i class="fab fa-facebook-f lead mx-2" style="color: #3b5998"></i>
-      </a>
-      <a href="https://twitter.com/DomuS2017" target="_blank">
-        <i class="fab fa-twitter lead mx-2" style="color: #00acee"></i>
-      </a>
-    </div>
-  </div>
-</nav>
+    <nav class="navbar fixed-bottom navbardark" id="divFooter">
+      <div class="w-100 d-flex flex-row flex-wrap justify-content-between">
+        <div>
+          Asociación DomuS BDSM Galicia
+        </div>
+        <div class="d-flex flex-row align-items-center">
+          <a href="https://fetlife.com/users/7135971" target="_blank">
+            <img class="mx-2" ngSrc="assets/images/fetlife.svg" width="25" height="25" alt="Logo FetLife">
+          </a>
+          <a href="https://www.facebook.com/DomuS.Galicia" target="_blank">
+            <i class="fab fa-facebook-f lead mx-2" style="color: #3b5998"></i>
+          </a>
+          <a href="https://twitter.com/DomuS2017" target="_blank">
+            <i class="fab fa-twitter lead mx-2" style="color: #00acee"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </mat-sidenav-content>
+</mat-sidenav-container>

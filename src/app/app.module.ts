@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { MaterialModule } from './material/material.module';
+
 import { AppComponent } from './app.component';
 import { IndexPageComponent } from './pages/index-page/index-page.component';
 import { GaleryPageComponent } from './pages/galery-page/galery-page.component';
@@ -15,28 +17,35 @@ import { DiyPageComponent } from './pages/diy-page/diy-page.component';
 import { CookiePolicyPageComponent } from './pages/cookie-policy-page/cookie-policy-page.component';
 import { NgOptimizedImage } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    IndexPageComponent,
-    GaleryPageComponent,
-    WorkshopPageComponent,
-    RentPageComponent,
-    EventsPageComponent,
-    ContactPageComponent,
-    RulesPageComponent,
-    MembershipsPageComponent,
-    DiyPageComponent,
-    CookiePolicyPageComponent,
-    NavbarComponent
-  ],
-            imports: [
-              BrowserModule,
-              AppRoutingModule,
-              NgOptimizedImage,
-            ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+@NgModule(
+  {
+    declarations: [
+      AppComponent,
+      IndexPageComponent,
+      GaleryPageComponent,
+      WorkshopPageComponent,
+      RentPageComponent,
+      EventsPageComponent,
+      ContactPageComponent,
+      RulesPageComponent,
+      MembershipsPageComponent,
+      DiyPageComponent,
+      CookiePolicyPageComponent,
+      NavbarComponent,
+    ],
+    imports: [
+      AppRoutingModule,
+      BrowserModule,
+      MaterialModule,
+      NgOptimizedImage,
+    ],
+    providers:    [
+      provideAnimationsAsync(),
+    ],
+    bootstrap:    [AppComponent],
+  },
+)
+export class AppModule {
+}
